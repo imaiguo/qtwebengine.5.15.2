@@ -46,6 +46,10 @@ qteverywhere\gnuwin32\bin to C:\Qt\qteverywhere.5.15.2
 
 安装perl [https://strawberryperl.com/download/5.32.1.1/strawberry-perl-5.32.1.1-64bit.msi]
 
+安装python2/python3 [https://www.python.org/ftp/python/2.7.17/python-2.7.17.amd64.msi]
+
+下载node.exe放到环境变量Path里 [https://nodejs.org/dist/v18.14.2/node-v18.14.2-win-x64.zip] 已经包含在源码目录中[tools\nodejs\node.exe]
+
 为应用编译准备环境
 ```
 set QT_BUILDDIR=C:\Qt\qteverywhere.5.15.2
@@ -64,6 +68,10 @@ set Path=%QT_BUILDDIR%\bin;%QT_BUILDDIR%\gnuwin32\bin;C:\devtools\Strawberry\per
 > nmake install
 ```
 
+编译中Core部分的命令
+```
+> C:\workspace\qtwebengine.5.15.2\build\src\3rdparty\ninja\ninja.exe -v  -C C:\workspace\qtwebengine.5.15.2\build\src\core\release QtWebEngineCore -k 100
+```
 
 For Windows, bison, flex and gperf are provided with the source code at c:\pathToQtsrc\gnuwin32\bin
 
