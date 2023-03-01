@@ -48,7 +48,7 @@ void TraceSorter::Queue::Sort() {
   PERFETTO_DCHECK(std::is_sorted(events_.begin(), sort_end));
   auto sort_begin = std::lower_bound(events_.begin(), sort_end, sort_min_ts_,
                                      &TimestampedTracePiece::Compare);
-  std::sort(sort_begin, events_.end());
+  std::sort(&sort_begin, &events_.end());
   sort_start_idx_ = 0;
   sort_min_ts_ = 0;
 

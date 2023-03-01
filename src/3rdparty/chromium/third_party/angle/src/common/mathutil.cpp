@@ -6,10 +6,13 @@
 
 // mathutil.cpp: Math and bit manipulation functions.
 
+
 #include "common/mathutil.h"
 
 #include <math.h>
 #include <algorithm>
+
+#pragma warning(disable:4244)
 
 namespace gl
 {

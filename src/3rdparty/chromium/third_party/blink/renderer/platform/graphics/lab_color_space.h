@@ -1,12 +1,14 @@
 #ifndef THIRD_PARTY_BLINK_RENDERER_PLATFORM_GRAPHICS_LAB_COLOR_SPACE_H_
 #define THIRD_PARTY_BLINK_RENDERER_PLATFORM_GRAPHICS_LAB_COLOR_SPACE_H_
 
+
 #include <algorithm>
 #include <cmath>
 #include <initializer_list>
 #include <iterator>
 
 #include "third_party/blink/renderer/platform/transforms/transformation_matrix.h"
+
 
 // Class to handle color transformation between RGB and CIE L*a*b* color spaces.
 namespace LabColorSpace {
@@ -138,9 +140,9 @@ class LABColorSpace {
                       clamp(lab.Z(), -128.0f, 128.0f)};
 
     return {
-        invf((v.X() + 16.0f) / 116.0f + (v.Y() * 0.002f)) * kIlluminantD50.X(),
-        invf((v.X() + 16.0f) / 116.0f) * kIlluminantD50.Y(),
-        invf((v.X() + 16.0f) / 116.0f - (v.Z() * 0.005f)) * kIlluminantD50.Z()};
+        (float)invf((v.X() + 16.0f) / 116.0f + (v.Y() * 0.002f)) * kIlluminantD50.X(),
+        (float)invf((v.X() + 16.0f) / 116.0f) * kIlluminantD50.Y(),
+        (float)invf((v.X() + 16.0f) / 116.0f - (v.Z() * 0.005f)) * kIlluminantD50.Z()};
   }
 
  private:
