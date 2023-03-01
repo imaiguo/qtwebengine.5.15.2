@@ -58,10 +58,10 @@ set QT_QPA_PLATFORM_PLUGIN_PATH=%QT_BUILDDIR%\plugins\platforms
 set QT_PLUGIN_PATH=%QT_BUILDDIR%\plugin
 set PKG_CONFIG_PATH=%QT_BUILDDIR%\lib\pkgconfig;%PKG_CONFIG_PATH%
 set Path=%QT_BUILDDIR%\bin;%QT_BUILDDIR%\gnuwin32\bin;C:\devtools\Strawberry\perl\bin;%Path%
-
-打开命令行提示符.
-
 ```
+
+打开命令行提示符配置参数，此参数支持视频解码，网页视频可以通过ffmpeg解码播放
+```shell
 > set CL=/MP
 > qmake ..  QMAKE_EXTRA_ARGS+="-proprietary-codecs -webengine-jumbo-build 0 -webengine-kerberos"
 > nmake
